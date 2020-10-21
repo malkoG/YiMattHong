@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        // Ruby Specific Extensions
+        "rebornix.ruby",
+        "hbenl.vscode-test-explorer",
+        "connorshea.vscode-test-explorer-status-bar",
+        "connorshea.vscode-ruby-test-adapter",
+
+        // Coding Style
+        "esbenp.prettier-vscode",
+        "oderwat.indent-rainbow"
+    ]
+}

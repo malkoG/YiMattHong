@@ -1,0 +1,17 @@
+development:
+  adapter: redis
+  url: redis://localhost:6379/10
+  channel_prefix: yee_matt_hong_dev
+
+test:
+  adapter: test
+
+staging:
+  adapter: redis
+  url: redis://localhost:6379/20
+  channel_prefix: yee_matt_hong_staging
+
+production:
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  channel_prefix: yee_matt_hong_production

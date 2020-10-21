@@ -1,0 +1,10 @@
+{
+    // for coding convention
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+
+    "rubyTestExplorer.logpanel": true,
+    "rubyTestExplorer.testFramework": "rspec",
+    "rubyTestExplorer.rspecCommand": "bundle exec rspec",
+    "rubyTestExplorer.rspecDirectory": "./spec/"
+}
