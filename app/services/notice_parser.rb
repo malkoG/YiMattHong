@@ -1,14 +1,18 @@
 class NoticeParser
   class << self
-    def crawl_page(board_id, post_pk)
-      url = generate_url(board_id, post_pk)
+    def crawl_page(board_id, bbs_pk, post_pk)
+      url = generate_url(bbs_pk, post_pk)
+      html = URI.open(url)
 
       cached_data = parse_html(html)
-      attached_files = find_attachments(html)
+      attachments = find_attachments(html)
 
-      cached_data[:board_id] = board_id
-      cached_data[:post_pk] = post_pk
-      cached_data[:attachments] = attached_files
+      cached_data[:bbs_pk] = bbs_pk.to_i
+      cached_data[:board_id] = board_id.to_i
+      cached_data[:post_pk] = post_pk.to_i
+      cached_data[:attachments] = attachments
+
+      Notice.create(**cached_data)
     end
 
     def parse_html(html)
@@ -31,13 +35,30 @@ class NoticeParser
     end
 
     def find_attachments(html)
-      attachment1 = ".inner > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(1) > span:nth-child(1) > span:nth-child(2)"
-      attachment2 = ".inner > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(2) > td:nth-child(1) > span:nth-child(1) > span:nth-child(2)"
+      doc = Nokogiri::HTML(html)
+      attachments = []
+
+      row_selector = '.inner > table:nth-child(1) > tbody:nth-child(2) > tr'
+      doc.css(row_selector).each do |row|
+        title = row.css('td:nth-child(1) > span:nth-child(1) > span:nth-child(2)')[0].content
+        attachment_url = row.css('td:nth-child(2) > a')[0]['href']
+
+        attachments << {
+          title: title,
+          url: wrap_attachment(attachment_url)
+        }
+      end
+
+      return attachments
     end
 
     private
-      def generate_url(board_id, post_pk)
-        "http://www.hongik.ac.kr/front/boardview.do?pkid=#{post_pk}&currentPage=1&searchField=ALL&siteGubun=1&menuGubun=1&bbsConfigFK=#{board_id}&searchLowItem=ALL&searchValue="
+      def generate_url(bbs_pk, post_pk)
+        "http://www.hongik.ac.kr/front/boardview.do?pkid=#{post_pk}&currentPage=1&searchField=ALL&siteGubun=1&menuGubun=1&bbsConfigFK=#{bbs_pk}&searchLowItem=ALL&searchValue="
+      end
+
+      def wrap_attachment(suffix_url)
+        "http://www.hongik.ac.kr#{suffix_url}"
       end
   end
 end
