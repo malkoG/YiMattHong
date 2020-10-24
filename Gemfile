@@ -54,6 +54,7 @@ end
 group :test do
   gem 'rspec-sidekiq'
   gem 'webmock'
+  gem 'capybara'
 end
 
 group :development do

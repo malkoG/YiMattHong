@@ -12,12 +12,13 @@ RSpec.describe NoticeComponent, type: :component do
         published_at: '2019-00-19',
         content: '<div>강한친구 대한육군</div>'
       )
-      rendered_result = render_inline(described_class.new(notice: notice))
 
-      expect(rendered_result.css('.notice-title').to_html).to include('입영통지서 안내')
-      expect(rendered_result.css('.notice-author').to_html).to include('굳건이')
-      expect(rendered_result.css('.notice-published-at').to_html).to include('2019-00-19')
-      expect(rendered_result.css('.notice-content').to_html.strip).to include('<div>강한친구 대한육군</div>')
+      render_inline(described_class.new(notice: notice))
+
+      expect(page).to have_css('.notice-title' ,text: '입영통지서 안내')
+      expect(page).to have_css('.notice-author' ,text: '굳건이')
+      expect(page).to have_css('.notice-published-at' ,text: '2019-00-19')
+      expect(page).to have_css('.notice-content')
     end
   end
 end
