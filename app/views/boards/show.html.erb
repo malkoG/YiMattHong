@@ -1,0 +1,7 @@
+<%= render TableComponent.new(fields: [:id, :title, :author, :published_at]) do |component| %>
+  <% component.slot(:header, classes: "") %>
+
+  <% @notices.each do |notice| %>
+    <% component.slot(:row, item: notice, is_resource: true) %>
+  <% end %>
+<% end %>
