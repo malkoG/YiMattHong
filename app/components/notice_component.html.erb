@@ -1,0 +1,17 @@
+<div class='notice'>
+  <p class='h1 notice-title'>
+    <%= @notice.title %>
+  </p>
+  <div class='notice-info text-right'>
+    <p class='notice-author mb-0'>
+      작성자 : <%= @notice.author %>
+    </p>
+    <p class='notice-published-at mb-0'>
+      게시일자 : <%= @notice.published_at %>
+    </p>
+  </div>
+
+  <div class='notice-content mt-5'>
+    <%= @notice.content.html_safe %>
+  </div>
+</div>

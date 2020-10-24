@@ -15,10 +15,22 @@ class TableComponent < ViewComponent::Base
   end
 
   class Row < ViewComponent::Slot
-    attr_reader :item
+    include Rails.application.routes.url_helpers
 
-    def initialize(item: {})
+    attr_reader :item, :url
+
+    def initialize(item: {}, controller: '', action: '', is_resource: false)
       @item = item
+      @url = url
+
+      if controller.blank? && action.blank? && url.nil? && is_resource
+        @url = url_for(
+          controller: item.class.name.pluralize.downcase,
+          action: "show",
+          id: item.id,
+          only_path: true
+        )
+      end
     end
   end
 end

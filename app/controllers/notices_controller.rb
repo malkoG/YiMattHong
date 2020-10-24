@@ -4,5 +4,6 @@ class NoticesController < ApplicationController
   end
 
   def show
+    @notice = Notice.find(params[:id])
   end
 end

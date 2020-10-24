@@ -2,6 +2,6 @@
   <% component.slot(:header, classes: "") %>
 
   <% @notices.each do |notice| %>
-    <% component.slot(:row, item: notice) %>
+    <% component.slot(:row, item: notice, is_resource: true) %>
   <% end %>
 <% end %>

@@ -14,7 +14,13 @@
         <tr>
           <% @fields.each do |field| %>
             <td>
-              <%= row.item[field] %>
+              <% unless field == :title %>
+                <%= row.item[field] %>
+              <% else %>
+                <%= link_to row.url do %>
+                  <%= row.item[field] %>
+                <% end %>
+              <% end %>
             </td>
           <% end %>
         </tr>
