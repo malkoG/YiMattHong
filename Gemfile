@@ -55,6 +55,7 @@ group :test do
   gem 'rspec-sidekiq'
   gem 'webmock'
   gem 'capybara'
+  gem 'shoulda-matchers'
 end
 
 group :development do

@@ -238,6 +238,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    shoulda-matchers (4.4.1)
+      activesupport (>= 4.2.0)
     sidekiq (6.0.4)
       connection_pool (>= 2.2.2)
       rack (>= 2.0.0)
@@ -328,6 +330,7 @@ DEPENDENCIES
   rspec-support!
   rubocop (~> 1.0)
   sass-rails (>= 6)
+  shoulda-matchers
   sidekiq (= 6.0.4)
   sidekiq-cron
   solargraph
