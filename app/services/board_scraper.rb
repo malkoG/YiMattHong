@@ -1,3 +1,6 @@
+# NOTE : See https://stackoverflow.com/questions/60065152/rails-rake-task-fails-just-in-production-nomethoderror-private-method-open
+require 'open-uri'
+
 class BoardScraper
   attr_reader :board
 
@@ -14,7 +17,7 @@ class BoardScraper
     post_pks = parse_html(html)
     post_pks.each do |post_pk|
       next unless post_pk.present?
-      NoticeParser.crawl_page(board_id, bbs_pk, post_pk)
+      NoticeParser.crawl_page(board.id, bbs_pk, post_pk)
     end
   end
 

@@ -1,3 +1,6 @@
+# NOTE : See https://stackoverflow.com/questions/60065152/rails-rake-task-fails-just-in-production-nomethoderror-private-method-open
+require 'open-uri'
+
 class NoticeParser
   class << self
     def crawl_page(board_id, bbs_pk, post_pk)
