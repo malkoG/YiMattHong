@@ -14,8 +14,19 @@
  *= require_self
  */
 
+body {
+  margin: 0;
+}
+
 .content-wrapper {
+  padding-top: 56px;
   width: 780px;
 
   margin: auto;
+}
+
+.navbar-wrapper {
+  width: 100vw;
+  padding-left: calc((100vw - 780px)/2);
+  padding-right: calc((100vw - 780px)/2);
 }
