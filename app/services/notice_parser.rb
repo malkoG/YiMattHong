@@ -25,7 +25,6 @@ class NoticeParser
         title: '.bbs-read > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(1) > th:nth-child(1)',
         author: 'div.unit:nth-child(1) > span:nth-child(2)',
         published_at: 'div.unit:nth-child(2) > span:nth-child(2)',
-        content: '.substance',
       }
 
       options = {}
@@ -34,6 +33,7 @@ class NoticeParser
         options[_attr] = doc.css(selector)[0].content
       end
 
+      options[:content] = doc.css('.substance')[0].inner_html
       return options
     end
 
