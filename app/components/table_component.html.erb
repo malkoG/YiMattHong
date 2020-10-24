@@ -1,0 +1,24 @@
+<table>
+  <% if header %>
+    <thead>
+      <% @fields.each do |field| %>
+        <th>
+          <%= field %>
+        </th>
+      <% end %>
+    </thead>
+  <% end %>
+  <tbody>
+    <% if rows.any? %>
+      <% rows.each do |row| %>
+        <tr>
+          <% @fields.each do |field| %>
+            <td>
+              <%= row.item[field] %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

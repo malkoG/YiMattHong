@@ -31,6 +31,9 @@ gem 'sidekiq-cron'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# View Component
+gem "view_component", require: "view_component/engine"
+
 group :development, :test do
   gem "action-cable-testing", "~> 0.5.0"
   

@@ -272,6 +272,8 @@ GEM
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (1.7.0)
+    view_component (2.20.0)
+      activesupport (>= 5.0.0, < 7.0)
     web-console (4.0.4)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -324,6 +326,7 @@ DEPENDENCIES
   traceroute
   turbolinks (~> 5)
   tzinfo-data
+  view_component
   web-console (>= 3.3.0)
   webmock
   webpacker (~> 4.0)
