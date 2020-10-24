@@ -7,9 +7,15 @@
 
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <%= link_to notices_path, class: 'nav-link nav-notices' do %>
           공지사항
+        <% end %>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to curations_path, class: 'nav-link nav-curations' do %>
+          게시판 목록
         <% end %>
       </li>
     </ul>

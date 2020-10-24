@@ -1,0 +1,12 @@
+<div class="curation-card card border-dark mb-2">
+  <div class="board-category card-header">
+    <%= link_to board_path(@board) do %>
+      <%= @board[:category] %>
+    <% end %>
+  </div>
+  <div class="card-body text-dark">
+    <p class="board-description card-text">
+      <%= @board[:description] %>
+    </p>
+  </div>
+</div>

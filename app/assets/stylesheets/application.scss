@@ -30,3 +30,14 @@ body {
   padding-left: calc((100vw - 780px)/2);
   padding-right: calc((100vw - 780px)/2);
 }
+
+.curation-card-deck {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 5px;
+}
+
+.curation-card {
+  margin: 0px;
+  margin-bottom: 30px;
+}

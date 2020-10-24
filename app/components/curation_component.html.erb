@@ -1,0 +1,7 @@
+<div class="curation">
+  <h4 class="curation-title"><%= @curation.title %></h4>
+  <p class="curation-description"><%= @curation.description %></p>
+  <div class="curation-card-deck card-deck">
+    <%= render CuratedBoardComponent.with_collection(@curation.boards) %>
+  </div>
+</div>
