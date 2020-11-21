@@ -1,2 +1,5 @@
 ko:
   hello: "안녕, 세상아!"
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"
