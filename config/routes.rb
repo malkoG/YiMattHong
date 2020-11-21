@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   resources :notices, only: [:index, :show]
   resources :curations, only: [:index]
   resources :boards, only: [:show]
