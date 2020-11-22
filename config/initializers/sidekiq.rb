@@ -11,7 +11,7 @@ Sidekiq::Extensions.enable_delay!
 
 credentials = Rails.application.credentials[Rails.env.to_sym] || {}
 cache_address = "redis://#{credentials[:redis_host] || ENV['REDIS_HOST']}:#{credentials[:redis_port] || ENV['REDIS_PORT']}/0/sidekiq"
-cache_address = ENV.fetch('REDIS_URL') if Rails.application.production?
+cache_address = ENV.fetch('REDIS_URL') if Rails.env.production?
 
 Sidekiq.configure_server do |config|
   config.redis = { url: cache_address }
