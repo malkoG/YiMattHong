@@ -1,0 +1,5 @@
+
+all_notices_scraping_worker:
+  cron: "5 4 * * *"
+  class: "AllNoticesScrapingWorker"
+  queue: default
