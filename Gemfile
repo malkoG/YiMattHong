@@ -38,6 +38,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # View Component
 gem "view_component", require: "view_component/engine"
 
+# Notification for mobile devices
+gem "fcm"
+
 group :development, :test do
   gem "action-cable-testing", "~> 0.5.0"
   
