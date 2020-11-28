@@ -8,7 +8,7 @@ class DiscordNotifier
 
     def send_notification(notice)
       return unless check_notification_condition(notice)
-      return unless notice.board.aleady_fetched?
+      return unless notice.board.already_fetched?
 
       webhook_url = ''
       category = ''
