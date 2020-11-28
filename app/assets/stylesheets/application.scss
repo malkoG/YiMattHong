@@ -14,21 +14,88 @@
  *= require_self
  */
 
+@import 'mixins/mq.scss';
+
 body {
   margin: 0;
 }
 
 .content-wrapper {
   padding-top: 20px;
-  width: 780px;
+  @include is-tablet {
+    width: calc(100% - 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @include is-pc {
+    width: $tablet-width;
+  }
 
   margin: auto;
 }
 
 .navbar-wrapper {
   width: 100vw;
-  padding-left: calc((100vw - 780px)/2);
-  padding-right: calc((100vw - 780px)/2);
+
+  @include is-pc {
+    padding-left: calc((100vw - #{$tablet-width})/2);
+    padding-right: calc((100vw - #{$tablet-width})/2);
+  }
+
+  @include is-tablet {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .sign-in-user-wrapper {
+    color: white;
+    font-size: 2em;
+  }
+
+  .dropdown-toggle {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  @include is-tablet {
+    .navbar-dropdown {
+      display: block;
+
+      .dropdown-item {
+        border: none;
+        color: white;
+        text-decoration: none;
+
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        &:hover {
+          background: #6c757d;
+        }
+      }
+
+      .dropdown-menu {
+        background: #343a40;
+
+        border: none;
+      }
+    }
+
+    .dropdown-toggle {
+      width: 100%;
+      &:focus, &:hover {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+  }
 }
 
 .curation-card-deck {

@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <%= render Shared::NavBarComponent.new %>
+    <%= render Shared::NavBarComponent.new(user: current_user) %>
 
     <%= render ContentWrapperComponent.new do %>
       <%= yield %>
