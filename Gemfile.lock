@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/malkoG/hongik-sso.git
+  revision: cda42bf157d8a4f260c3e02003574462a7a45726
+  branch: main
+  specs:
+    hongik_sso (0.1.0)
+
+GIT
   remote: https://github.com/rspec/rspec-core
   revision: e7c5d030966a7e8dad3e0a67c61920c4f2437c15
   specs:
@@ -384,6 +391,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   fcm
+  hongik_sso!
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)

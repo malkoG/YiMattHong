@@ -1,4 +1,4 @@
-<% if resource.errors.any? %>
+<% if resource.errors.any? || flash[:error].present? %>
   <div id="error_explanation">
     <h2>
       <%= I18n.t("errors.messages.not_saved",
@@ -9,6 +9,9 @@
     <ul>
       <% resource.errors.full_messages.each do |message| %>
         <li><%= message %></li>
+      <% end %>
+      <% if flash[:error].present? %>
+        <li><%= flash[:error] %></li>
       <% end %>
     </ul>
   </div>

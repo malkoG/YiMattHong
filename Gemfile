@@ -40,6 +40,7 @@ gem "view_component", require: "view_component/engine"
 
 # Notification for mobile devices
 gem "fcm"
+gem 'hongik_sso', github: 'malkoG/hongik-sso', branch: 'main'
 
 group :development, :test do
   gem "action-cable-testing", "~> 0.5.0"
