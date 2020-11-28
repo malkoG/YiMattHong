@@ -48,6 +48,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
+  gem 'dotenv-rails'
+
   gem "rspec"
   gem "rspec-core", git: "https://github.com/rspec/rspec-core"
   gem "rspec-expectations", git: "https://github.com/rspec/rspec-expectations"
