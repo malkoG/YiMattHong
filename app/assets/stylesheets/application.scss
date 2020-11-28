@@ -18,6 +18,7 @@
 
 body {
   margin: 0;
+  font-size: 15px;
 }
 
 .content-wrapper {
@@ -100,11 +101,32 @@ body {
 
 .curation-card-deck {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  @include is-pc {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include is-tablet {
+    grid-template-columns: 1fr;
+  }
   gap: 20px 5px;
 }
 
 .curation-card {
   margin: 0px;
   margin-bottom: 30px;
+
+  .curation-card-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .card-header-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    .card-header-action {
+      flex-basis: 30px;
+      cursor: pointer;
+    }
+  }
 }
