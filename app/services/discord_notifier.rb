@@ -31,14 +31,8 @@ class DiscordNotifier
     end
 
     def send_new_board_added(board)
-      return unless check_notification_condition(board)
-
-      webhook_url = ''
-      category = ''
-      if notice.bbs_pk.in? computer_science_faculty
-        webhook_url = ENV['CE_NOTICE']
-        category = board.category
-      end
+      webhook_url = ENV['BOARD_ADDED_WEBHOOK']
+      category = board.category
 
       client = Discordrb::Webhooks::Client.new(url: webhook_url)
       client.execute do |builder|
