@@ -1,4 +1,6 @@
 class Board < ApplicationRecord
-  has_many :notices
   belongs_to :curation, optional: true
+
+  has_many :notices
+  has_many :subscriptions
 end

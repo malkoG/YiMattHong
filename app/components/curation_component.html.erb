@@ -1,7 +1,9 @@
+<%# curation, user, board_ids %>
+
 <div class="curation">
-  <h4 class="curation-title"><%= @curation.title %></h4>
-  <p class="curation-description"><%= @curation.description %></p>
+  <h4 class="curation-title"><%= curation&.title %></h4>
+  <p class="curation-description"><%= curation&.description %></p>
   <div class="curation-card-deck card-deck">
-    <%= render CuratedBoardComponent.with_collection(@curation.boards) %>
+    <%= render CuratedBoardComponent.with_collection(curation&.boards, user: user, board_ids: board_ids) %>
   </div>
 </div>

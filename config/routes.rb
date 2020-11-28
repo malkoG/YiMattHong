@@ -13,6 +13,11 @@ Rails.application.routes.draw do
 
   resources :notices, only: [:index, :show]
   resources :curations, only: [:index]
-  resources :boards, only: [:show]
+  resources :boards, only: [:show] do
+    member do
+      put :subscribe
+      delete :unsubscribe
+    end
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
