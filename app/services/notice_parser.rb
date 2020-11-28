@@ -15,7 +15,8 @@ class NoticeParser
       cached_data[:post_pk] = post_pk.to_i
       cached_data[:attachments] = attachments
 
-      Notice.create(**cached_data)
+      notice = Notice.create(**cached_data)
+      DiscordNotifier.send_notification(notice)
     end
 
     def parse_html(html)

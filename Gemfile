@@ -34,6 +34,7 @@ gem 'sidekiq-cron'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'discordrb'
 
 # View Component
 gem "view_component", require: "view_component/engine"
