@@ -4,7 +4,7 @@ ActiveAdmin.register Board do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :category, :description, :bbs_pk, :curation_id
+  permit_params :category, :description, :bbs_pk, :curation_id, :source_url
   #
   # or
   #
