@@ -17,6 +17,11 @@ class DiscordNotifier
         category = notice.board.category
       end
 
+      if notice.bbs_pk.in? student_targeted_notices_bbs
+        webhook_url = ENV['STUDENT_NOTICE']
+        category = notice.board.category
+      end
+
       client = Discordrb::Webhooks::Client.new(url: webhook_url)
       client.execute do |builder|
         builder.content = "[#{category}] 게시판에 새 글이 올라왔어요!"
@@ -55,6 +60,10 @@ class DiscordNotifier
 
     def computer_science_faculty
       [54, 89]
+    end
+
+    def student_targeted_notices_bbs
+      [2, 3, 6, 8, 170]
     end
   end
 end
