@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_28_143338) do
+ActiveRecord::Schema.define(version: 2020_12_01_161829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_11_28_143338) do
     t.integer "bbs_pk"
     t.bigint "curation_id"
     t.boolean "already_fetched", default: false
+    t.string "source_url"
     t.index ["category"], name: "index_boards_on_category"
     t.index ["curation_id"], name: "index_boards_on_curation_id"
   end

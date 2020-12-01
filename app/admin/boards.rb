@@ -1,5 +1,4 @@
 ActiveAdmin.register Board do
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -19,6 +18,7 @@ ActiveAdmin.register Board do
     column :category
     column :description
     column :bbs_pk
+    column :source_url
     column :curation
   end
 
@@ -28,6 +28,7 @@ ActiveAdmin.register Board do
     f.inputs do
       f.input :category
       f.input :description
+      f.input :source_url
       f.input :bbs_pk
       f.input :curation
     end

@@ -9,6 +9,7 @@
     <p class='notice-published-at mb-0'>
       게시일자 : <%= @notice.published_at %>
     </p>
+    <%= link_to "게시판 확인하기", @notice.board.source_url, class: 'btn btn-info' %>
   </div>
 
   <div class='notice-content mt-5'>
