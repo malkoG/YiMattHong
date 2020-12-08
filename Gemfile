@@ -43,6 +43,9 @@ gem "view_component", require: "view_component/engine"
 gem "fcm"
 gem 'hongik_sso', github: 'malkoG/hongik-sso', branch: 'main'
 
+# For Pagination
+gem 'kaminari', '~> 1.2.0'
+
 group :development, :test do
   gem "action-cable-testing", "~> 0.5.0"
   

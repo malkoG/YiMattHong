@@ -7,6 +7,7 @@ class BoardsController < ApplicationController
       .find(params[:id])
       .notices
       .order('published_at desc')
+      .page(params[:page])
   end
 
   def subscribe
