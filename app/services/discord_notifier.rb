@@ -55,7 +55,7 @@ class DiscordNotifier
     private
 
     def check_notification_condition(board_or_notice)
-      board_or_notice.bbs_pk.in? computer_science_faculty
+      board_or_notice.bbs_pk.in?(computer_science_faculty) || board_or_notice.bbs_pk.in?(student_targeted_notices_bbs)
     end
 
     def computer_science_faculty
