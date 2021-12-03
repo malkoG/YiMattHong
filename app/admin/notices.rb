@@ -33,6 +33,7 @@ ActiveAdmin.register Notice do
       f.input :published_at
       f.input :bbs_pk
       f.input :post_pk
+      f.input :board
     end
 
     f.actions
