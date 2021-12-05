@@ -2,12 +2,7 @@
 
 class BoardsController < ApplicationController
   def show
-    @notices = Board
-      .includes(:notices)
-      .find(params[:id])
-      .notices
-      .order('published_at desc')
-      .page(params[:page])
+    @notices = NoticeFinder.new(params).execute
   end
 
   def subscribe
