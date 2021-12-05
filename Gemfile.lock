@@ -298,8 +298,6 @@ GEM
     raabro (1.4.0)
     racc (1.6.0)
     rack (2.2.3)
-    rack-protection (2.1.0)
-      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.4.1)
@@ -387,11 +385,10 @@ GEM
       tilt
     shoulda-matchers (5.0.0)
       activesupport (>= 5.2.0)
-    sidekiq (6.0.7)
+    sidekiq (6.2.1)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
-      rack-protection (>= 2.0.0)
-      redis (>= 4.1.0)
+      redis (>= 4.2.0)
     sidekiq-cron (1.2.0)
       fugit (~> 1.1)
       sidekiq (>= 4.2.1)
@@ -507,7 +504,7 @@ DEPENDENCIES
   rubocop (~> 1.0)
   sass-rails (>= 6)
   shoulda-matchers
-  sidekiq (~> 6.0.5)
+  sidekiq (~> 6.2.1)
   sidekiq-cron
   solargraph
   spring
