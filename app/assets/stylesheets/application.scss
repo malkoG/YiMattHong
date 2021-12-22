@@ -39,6 +39,11 @@ body {
 .navbar-wrapper {
   width: 100vw;
 
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
   @include is-pc {
     padding-left: calc((100vw - #{$tablet-width})/2);
     padding-right: calc((100vw - #{$tablet-width})/2);
@@ -47,6 +52,25 @@ body {
   @include is-tablet {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  #navbar-text {
+    @include is-pc {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .navbar-toggler {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-light);
+    background-image: none;
+    box-shadow: none;
+
+    &:hover {
+      background-image: none;
+      box-shadow: none;
+    }
   }
 
   .sign-in-user-wrapper {
@@ -77,12 +101,12 @@ body {
         padding-bottom: 10px;
 
         &:hover {
-          background: #6c757d;
+          background: var(--bs-light);
         }
       }
 
       .dropdown-menu {
-        background: #343a40;
+        background: var(--bs-primary);
 
         border: none;
       }
