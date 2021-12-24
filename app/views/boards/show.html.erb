@@ -1,3 +1,28 @@
+<% if params[:q].present? %>
+<div class="search-result alert alert-light mt-2">
+  <h3 class="alert-badge"><span class="badge bg-primary">검색 결과</span></h3>
+
+  <p class="pt-2">
+    검색 키워드 : <%= params[:q] %> <br/>
+  </p>
+</div>
+<% end %>
+
+<%= form_tag(board_path(params[:id]), :method => "get") do %>
+  <div class="input-group my-2">
+    <%= search_field_tag :q, params[:q], placeholder: "검색할 키워드를 입력하세요", class: "form-control"%>
+    <%= hidden_field_tag :page, 1, class:"form-control" %>
+    <div class="input-group-btn mx-2">
+      <%= button_tag class: "btn btn-primary glyphicon glyphicon-search", name: nil do %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+        검색
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
 <%= render TableComponent.new(fields: [:id, :title, :author, :published_at]) do |component| %>
   <% component.slot(:header, classes: "") %>
 

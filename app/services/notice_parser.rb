@@ -16,6 +16,7 @@ class NoticeParser
       cached_data[:attachments] = attachments
 
       notice = Notice.create(**cached_data)
+      notice.update(romanized_title: Gimchi.romanize(notice.title))
       DiscordNotifier.send_notification(notice)
     end
 

@@ -47,6 +47,9 @@ gem 'hongik_sso', github: 'malkoG/hongik-sso', branch: 'main'
 # For Pagination
 gem 'kaminari', '~> 1.2.0'
 
+gem 'pg_search', '~> 2.3'
+gem 'gimchi', '~> 0.2.1'
+
 group :development, :test do
   gem "action-cable-testing", "~> 0.5.0"
   
