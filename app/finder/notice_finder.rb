@@ -19,7 +19,7 @@ class NoticeFinder
       .page(@params[:page])
 
     if @params[:q].present?
-      query = query.where('title ILIKE :search', search: "%#{@params[:q]}%")
+      query = query.search_by_keyword(@params[:q])
     end
 
     query

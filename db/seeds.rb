@@ -19,6 +19,7 @@ if Rails.env.development?
 
   _notices = (1..1010).map do |_k|
     board = boards.sample
-    Notice.create!(board: board, title: Faker::Books::Lovecraft.sentence)
+    notice = Notice.create!(board: board, title: Faker::Books::Lovecraft.sentence)
+    notice.update(romanized_title: notice.title)
   end
 end
