@@ -1,5 +1,8 @@
 {
     "recommendations": [
+        // Rails Specific Extensions
+        "manuelpuyol.erb-linter",
+
         // Ruby Specific Extensions
         "rebornix.ruby",
         "hbenl.vscode-test-explorer",
