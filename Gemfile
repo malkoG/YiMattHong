@@ -52,7 +52,8 @@ gem 'gimchi', '~> 0.2.1'
 
 group :development, :test do
   gem "action-cable-testing", "~> 0.5.0"
-  
+  gem "erb_lint", require: false
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 

@@ -1,0 +1,66 @@
+---
+EnableDefaultLinters: true
+
+linters:
+  ErbSafety:
+    enabled: true
+  SelfClosingTag:
+    enabled: false
+  ClosingErbTagIndent:
+    enabled: false
+
+  RuboCop:
+    enabled: true
+    ignored_cops:
+      - Layout/BlockAlignment
+      - Layout/EndAlignment
+      - Layout/LineLength
+      - Lint/Void
+      - Naming/FileName
+      - Style/AlignParameters
+      - Style/BlockNesting
+      - Style/ElseAlignment
+      - Style/FileName
+      - Style/FinalNewline
+      - Style/FrozenStringLiteralComment
+      - Style/IfUnlessModifier
+      - Style/IndentationWidth
+      - Style/Next
+      - Style/TrailingWhitespace
+      - Style/WhileUntilModifier
+
+      - Cop/LineBreakAfterGuardClauses
+      - Cop/ProjectPathHelper
+      - Layout/EmptyLineAfterGuardClause
+      - Layout/LeadingCommentSpace
+      - Layout/SpaceAroundOperators
+      - Layout/SpaceBeforeComma
+      - Layout/SpaceBeforeFirstArg
+      - Layout/SpaceInsideHashLiteralBraces
+      - Layout/SpaceInsideStringInterpolation
+      - Layout/TrailingEmptyLines
+      - Lint/LiteralInInterpolation
+      - Lint/ParenthesesAsGroupedExpression
+      - Lint/SafeNavigationConsistency
+      - Metrics/BlockNesting
+      - Naming/VariableName
+      - Performance/RedundantMatch
+      - Performance/StringReplacement
+      - Rails/LinkToBlank
+      - Rails/Presence
+      - Rails/RequestReferer
+      - Style/ColonMethodCall
+      - Style/ConditionalAssignment
+      - Style/HashSyntax
+      - Style/IdenticalConditionalBranches
+      - Style/NegatedIf
+      - Style/NestedTernaryOperator
+      - Style/SelfAssignment
+      - Style/TernaryParentheses
+      - Style/TrailingCommaInHashLiteral
+      - Style/UnlessElse
+      - Style/UnneededCondition
+      - Style/WordArray
+      - Style/ZeroLengthPredicate
+
+      - Cop/UserAdmin
